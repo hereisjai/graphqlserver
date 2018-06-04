@@ -23,7 +23,7 @@ const app = express();
 app.use( '/graphiql', graphiqlExpress({
 
   endpointURL: '/graphql',
-  subscriptionsEndpoint: `ws://localhost:3000/subscriptions`
+  subscriptionsEndpoint: `ws://http://graphqlserver-graphqlserver.a3c1.starter-us-west-1.openshiftapps.com/subscriptions`
 }));
   
 app.use('/graphql', bodyParser.json(), graphqlExpress({

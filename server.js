@@ -14,7 +14,7 @@ import { SubscriptionServer } from 'subscriptions-transport-ws';
 
 import typeDefs from  './src/schema';
 import resolvers  from './src/resolver';
-const server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+const server_port = process.env.OPENSHIFT_NODEJS_PORT || 443
 
 const schema =makeExecutableSchema({ typeDefs,resolvers});
 

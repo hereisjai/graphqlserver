@@ -7,6 +7,7 @@ import {
   makeExecutableSchema
 } from 'graphql-tools';
 
+
 import { createServer } from 'http';
 import { execute, subscribe } from 'graphql';
 import { PubSub } from 'graphql-subscriptions';
@@ -18,8 +19,12 @@ const server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080 ;
 
 const schema =makeExecutableSchema({ typeDefs,resolvers});
 
+const cors = require('cors');
+
 const app = express();
 
+app.use(cors());
+ 
 app.use( '/graphiql', graphiqlExpress({
 
   endpointURL: '/graphql',
